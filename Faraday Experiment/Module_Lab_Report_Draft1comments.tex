@@ -4,6 +4,8 @@
 \usepackage{amsfonts} 
 \usepackage{graphicx} 
 \usepackage{float}
+\usepackage{color}
+\usepackage{ulem}
 
 \begin{document}
 
@@ -21,7 +23,7 @@
 
 \begin{abstract}
 
-As observed by Faraday, when passing light through certain materials, one can change its polarization by applying a magnetic field. Each material has a Verdet Constant, which determines the degree to which the applied magnetic field will alter the polarization angle. In our experiment, we passed a red (650nm) laser beam through a glass rod centered within a solenoid and measured the relative change in angle with respect to a rotating polarizer caused by applying a series of different magnetic fields. We then solved for the Verdet constant of the glass rod using two different mathematical methods and compared the results to the accepted values for the glass. Our two methods yielded a $v_c$ of -20.53 $\pm$ 0.382 $\frac{rad}{m*T}$ and 18.67 + 0.504 $\frac{rad}{m*T}$, compared with the accepted value of 23 $\frac{rad}{m*T}$.
+As observed by Faraday, when passing light through certain materials, one can change its polarization by applying a magnetic field. Each material has a Verdet Constant, which determines  the degree to which the applied magnetic field will alter the polarization angle. \textcolor{red}{the verdet constant doesn't physically determine the magnitude of the shift in polarization. That depends on the nature of the birefrigent material through which the light is passing. Try ``characterizes'' or ``measures''}In our experiment, we passed a red (650nm) laser beam through a glass rod centered within a solenoid and measured the relative change in angle with respect to a rotating polarizer caused by applying a series of different magnetic fields.\textcolor{red}{was the light from the laser beam polarized or unpolarized? Also, as written, this reads as if the magnetic field caused the 2nd polarizer to rotate} We then solved for the Verdet constant of the glass rod using two different \textcolor{blue}{\textit{mathematical}} methods and compared the results to the accepted values for the glass. \textcolor{red}{this reads as if you used one measurement method and then came up with two different numerical results. That would be disturbing. You actually used two different \textit{experimental} methods (which then also required different method to calculate the Verdet constant)} Our two methods yielded a $v_c$ of -20.53 $\pm$ 0.382 $\frac{rad}{m*T}$ and 18.67 + 0.504 $\frac{rad}{m*T}$, compared with the accepted value of 23 $\frac{rad}{m*T}$. \textcolor{blue}{note: 20.53 - 18.67 = 1.86, while 0.38 + 0.50 = 0.88, so results agree within two standard deviations, if you used standard deviation as your measure of error. I assume you meant a postive value of 20.53 rather than the -20.53 value listed above?}\textcolor{red}{this ``accepted'' value is for a particular material at a particular wavelength, and not actually the same wavelength as you used. I think 670 nm instead of 650? And the Verdet ``constant'' is wavelength dependent. OK to note that this is close to the value reported by Teachspin for a similar rod at a slightly different wavelength, but what you really need to address here is whether or not \textit{your} two measurements are consistent with each other (and those of your classmates) --- or alternatively, within how many standard deviations ---  and if not, whether one of these might be more susceptible to systematic error. }
 
 \end{abstract}
 
@@ -29,12 +31,28 @@ As observed by Faraday, when passing light through certain materials, one can ch
 
 \section{Introduction} 
 
-In 1845, Michael Faraday discovered that light and magnetic field interact in medium, in which the latter rotates the light's plane of polarization by an angle linearly proportional to the field, provided that the magnetic field is parallel to the direction of propagation of light. This magneto-optical phenomenon, now called Faraday effect, provided the very first evidence that light and magnetism are connected. In mathematical expression, it writes
+In 1845, Michael Faraday discovered that light and magnetic field interact in medium, in which the latter rotates the light's plane of polarization by an angle linearly proportional to the field, provided that the magnetic field is parallel to the direction of propagation of light. This magneto-optical phenomenon, now called Faraday effect, provided the very first evidence that light and magnetism are connected. In mathematical expression, \textcolor{magenta}{it writes}
 \begin{equation}
 \label{faraday}
 \phi =VBL  (radian)
 \end{equation}
-where L is the length of the medium light goes through, and B is the magnetic field. V here is a material-dependent number called $Verdet$ constant.
+\textcolor{red}{better would be:}
+\begin{equation*}
+\label{faraday}
+\phi =v_cBL 
+\end{equation*}
+or
+\begin{equation*}
+\label{faraday}
+\Delta\phi =v_cBL 
+\end{equation*}
+or
+
+where L is the length of the medium light goes through, and B is the magnetic field. V here is a material-dependent number called $Verdet$ constant. 
+\textcolor{red}{You haven't defined $\phi$!}
+
+\textcolor{magenta}{do you mean ``Mathematically, we write'' or perhaps ``Mathematically, it is described by the following formula'' (or equivalent)? I don't think the magnetooptical phenomenon is doing the writing.} \textcolor{blue}{Also, I suggest that you use $v_c$ instead of $V$ to avoid confusion with voltage. L isn't in radians, and if you want to indicate that the angle is in radians (which can often be assumed) it is best to do that within the text. }. 
+
 To experimentally verify the Faraday equation in our lab, we need to measure the induced polarization of light within a certain transparent material in a magnetic field, and calculate the Verdet constant from the equation, then compare it with the actual Verdet constant specified for our material. We proceed with a laser beam going through a transparent material in a magnetic field, and passing through a adjustable polarizer. The output laser beam is finally collected by a photodiode that indicates the light intensity by generating a voltage that we can measure with a multimeter, linked with a computer to collect data. With each magnetic field setting, we rotate the polarizer and record voltage reading from the photodiode, given that the light intensity is dependent on the polarizer angle. We expect to see a phase shift in the light intensity across different field settings as the magnetically induced polarization is also dependent on the field. It is worth noting that the Faraday effect shall is a relatively small effect with our lab-strength magnetic field.
 
 We use two approaches to model the Faraday effect. One approach is the direct method, in which we find the phase shift in the light intensity and associate it with the magnetic field. This method gives us the Verdet constant directly from the Faraday equation. Another method, called slope method, utilizes the voltage reading at around 45 degrees from maximum on the polarizer to associate the photodiode voltage with the magnetic field. The first method includes the process of sinusoidal fitting of the data using computer software, while the latter requires mathematical manipulation of the Faraday equation. It is expected that the two methods will yield the same Verdet constant value as they are mathematical equivalent. The descriptions of these two methods can be found in the analysis section.
