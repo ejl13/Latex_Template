@@ -104,6 +104,13 @@ Distance from Center & Magnetic Field\\
 
 The next step is to insert the glass rod, which serves as the rotation medium in this experiment, into the solenoid. The length reference is again used to make sure the rod is centered inside the solenoid. The length of the glass rod is $10cm=0.1m$, so each end of the glass rod is $0.05m$ away from the center. According to the above magnetic field table, the field undergoes a minor change from the center to $0.05m$ away, namely from 106.5$\pm$0.1G to 100$\pm$0.1G, suggesting that we can safely take the average value of the fields at these two points, 103G, as the approximation of the magnetic field within the glass rod. 
 
+\textcolor{red}{LaTeX tip}
+\begin{verbatim}
+  write $0.05 \rm{\ m}$ rather than $0.05m$
+\end{verbatim}
+\textcolor{red}{so as to get $0.05 \rm{\ m}$ instead of $0.05m$. }
+
+
 \textcolor{blue}{better than that simple average would be weighted average such as $\frac{1}{N} \sum_{x_1=-L/2}^{x_N = L/2}B(x_i)$  for equally spaced data measurements or  $\frac{1}{L} \int_{-L/2}^{L/2}B(x)dx$ (if you first fit your data to a smooth function for B(x). The difference between your simple average and these would be particularly important when measuring a liquid sample that extends outside the solenoid. Try plotting your data (with errors) to see if a fit would be productive. It depends in part on whether you have any additional data between 0 and 5.5 cm.}
 
 
@@ -132,7 +139,14 @@ After collecting data for all five different currents, those points were plotted
 \label{volt eqn}
 v_d = v_0*cos^2(\theta -\theta _0)
 \end{equation}
+\textcolor{red}{The simple multiplication symbol isn't included in equations in scientific publications. Voltage symbols are usually capitalized. There is a special \LaTeX command for trig functions.  Try: }
+\begin{equation}
+\label{volt eqn}
+V_d = V_0 \cos^2(\theta -\theta _0)
+\end{equation}
+
 In this manner, by comparing the phase shift $\theta_0$ for each trial, we can find the relative change in polarization resulting from each magnetic field. For error in relative polarizer angle, we considered $\pm$ 1 degree, however when fitting across all 72 points, their combinations constrained the error by a factor of $\frac{1}{\sqrt{72}}$ for an effective error of $\pm$ 0.118 degrees. Error in voltage, and thus in magnetic field, is considered negligible based on the precision and stability of our power supply and volt meter. In all cases, degrees were converted to radian at a factor of $\frac{\pi}{180}$ for calculating the Verdet constant.
+\textcolor{blue}{for your readership, it is probably helpful to point out that all the equations used are in terms of radians, but it shouldn't be necessary to tell us how you converted from degrees to radians. Anybody who can follow the rest of the paper will surely know the conversion factor)} 
 
 With the photodiode voltage, relative polarizer angle, and magnetic field strength data, there are two possible methods for calculating the Verdet constant:
 \begin{equation}
@@ -168,6 +182,8 @@ Phase Shift (deg) & Fit Error & $\Delta$ Phase Shift (deg) & Current (A) & Magne
 \end{figure}
 
 The first method attempts to solve for the Verdet constant directly by graphing $\delta \theta$ versus $\delta B$ (see Fig.\ref{V_B Slope}). The slope of the linear fit of this line provides $\frac{\delta \theta}{\delta B}$, solving for $v_c = -20.53$ $\frac{rad}{m*T}$. Error in $\theta$ was calculated as the sum in quadrature of our error in measurement - 0.118 degress - and the error in the linear fit - 2.19 degrees. Neglecting error in B, then $\frac{\delta v_c}{v_c} = \frac{\delta \Delta \theta}{\Delta \theta}$, giving an error of $\pm 0.382$ $\frac{rad}{m*T}$. Thus the direct method yielded a Verdet constant of -20.53 $\pm$ 0.382 $\frac{rad}{m*T}$.
+
+\textcolor{red}{the Verdet coefficient should be expressed as a positive quantity (like the speed of light in a particular material). It is understood from Eq. (1) that reversing the direction of the magnetic field (and hence the sign of B or direction of $\Delta B$) will change the sign of $\Delta \phi$.} 
 
 \begin{figure}[h]
 
