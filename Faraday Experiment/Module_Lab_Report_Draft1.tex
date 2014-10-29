@@ -21,7 +21,7 @@
 
 \begin{abstract}
 
-As observed by Faraday, when passing light through certain materials, one can change its polarization by applying a magnetic field. Each material has a Verdet Constant, which determines the degree to which the applied magnetic field will alter the polarization angle. In our experiment, we passed a red (650nm) laser beam through a glass rod centered within a solenoid and measured the relative change in angle with respect to a rotating polarizer caused by applying a series of different magnetic fields. We then solved for the Verdet constant of the glass rod using two different mathematical methods and compared the results to the accepted values for the glass. Our two methods yielded a $v_c$ of -20.53 $\pm$ 0.382 $\frac{rad}{m*T}$ and 18.67 + 0.504 $\frac{rad}{m*T}$, compared with the accepted value of 23 $\frac{rad}{m*T}$.
+Known as the Faraday Effect, when one passes light through certain materials, you can change its polarization by applying a magnetic field. Each material has a Verdet Constant, which characterizes the degree to which the applied magnetic field will alter the polarization angle. In our experiment, we passed a polarized red (650nm) laser beam through a glass rod centered within a solenoid (where the change in polarization of the light will occur) and then through a rotating polarizer (used to see the relative change in polarization angle) and finally into a photodiode, where the intensity of the light is measured as a voltage drop across a 1k $\Omega$ resistor; noise due to ambient light and laser fluctuation was reduced using a combination of square-wave modulation of the laser and a lock-in amplifier for the signal from the photodiode. To explore two different methods of finding the Verdet Constant, we first measured the sinusoidal variation in intensity caused by rotating the polarizer for fixed magnetic field strengths, and repeating the trials with different fields ranging from -3T to 3T. Next, we used a fixed relative polarizer angle of 45 degrees and measured the change in light intensity at the photodiode as a function of changing magnetic field strength, again from -3T to 3T. We then solved for the Verdet constant of the glass rod and compared the results to the accepted values for the glass. Our two methods yielded a $v_c$ of 20.53 $\pm$ 0.382 $\frac{rad}{m*T}$ and 18.67 + 0.504 $\frac{rad}{m*T}$, respectively, compared with the accepted value of 23 $\frac{rad}{m*T}$. Our two values are inconsistant within one $\sigma$, but are consistant within 2 $\sigma$, and are both similar to the accepted value, which was calculated using a 670nm laser and the Verdet Constant is wavelength dependant.
 
 \end{abstract}
 
@@ -94,9 +94,9 @@ The initial angle of the polarizer is the angle that allows maximum light intens
 After collecting data for all five different currents, those points were plotted and fit using the plot.ly interface (see Fig.\ref{wave_plot}). Given the positive, periodic nature of the photodiode intensity, we used the following as the fit parameter:
 \begin{equation}
 \label{volt eqn}
-v_d = v_0*cos^2(\theta -\theta _0)
+V_d = V_0 \cos^2(\theta -\theta _0)
 \end{equation}
-In this manner, by comparing the phase shift $\theta_0$ for each trial, we can find the relative change in polarization resulting from each magnetic field. For error in relative polarizer angle, we considered $\pm$ 1 degree, however when fitting across all 72 points, their combinations constrained the error by a factor of $\frac{1}{\sqrt{72}}$ for an effective error of $\pm$ 0.118 degrees. Error in voltage, and thus in magnetic field, is considered negligible based on the precision and stability of our power supply and volt meter. In all cases, degrees were converted to radian at a factor of $\frac{\pi}{180}$ for calculating the Verdet constant.
+In this manner, by comparing the phase shift $\theta_0$ for each trial, we can find the relative change in polarization resulting from each magnetic field. For error in relative polarizer angle, we considered $\pm$ 1 degree, however when fitting across all 72 points, their combinations constrained the error by a factor of $\frac{1}{\sqrt{72}}$ for an effective error of $\pm$ 0.118 degrees. Error in voltage, and thus in magnetic field, is considered negligible based on the precision and stability of our power supply and volt meter. Since the above equations, and those that follow, use $\Theta$ in radians, all measurements in degrees were converted during calculation.
 
 With the photodiode voltage, relative polarizer angle, and magnetic field strength data, there are two possible methods for calculating the Verdet constant:
 \begin{equation}
@@ -131,7 +131,7 @@ Phase Shift (deg) & Fit Error & $\Delta$ Phase Shift (deg) & Current (A) & Magne
 \label{wave_plot}
 \end{figure}
 
-The first method attempts to solve for the Verdet constant directly by graphing $\delta \theta$ versus $\delta B$ (see Fig.\ref{V_B Slope}). The slope of the linear fit of this line provides $\frac{\delta \theta}{\delta B}$, solving for $v_c = -20.53$ $\frac{rad}{m*T}$. Error in $\theta$ was calculated as the sum in quadrature of our error in measurement - 0.118 degress - and the error in the linear fit - 2.19 degrees. Neglecting error in B, then $\frac{\delta v_c}{v_c} = \frac{\delta \Delta \theta}{\Delta \theta}$, giving an error of $\pm 0.382$ $\frac{rad}{m*T}$. Thus the direct method yielded a Verdet constant of -20.53 $\pm$ 0.382 $\frac{rad}{m*T}$.
+The first method attempts to solve for the Verdet constant directly by graphing $\delta \theta$ versus $\delta B$ (see Fig.\ref{V_B Slope}). The slope of the linear fit of this line provides $\frac{\delta \theta}{\delta B}$, solving for $v_c = 20.53$ $\frac{rad}{m*T}$. Error in $\theta$ was calculated as the sum in quadrature of our error in measurement - 0.118 degress - and the error in the linear fit - 2.19 degrees. Neglecting error in B, then $\frac{\delta v_c}{v_c} = \frac{\delta \Delta \theta}{\Delta \theta}$, giving an error of $\pm 0.382$ $\frac{rad}{m*T}$. Thus the direct method yielded a Verdet constant of 20.53 $\pm$ 0.382 $\frac{rad}{m*T}$.
 
 \begin{figure}[h]
 
@@ -143,17 +143,17 @@ The second method, referred to as the slope method, compares the photodiode volt
 \begin{equation}
 \frac{dV_d}{dB}= \frac{dV_d}{d\theta }\frac{d\theta }{dB}=v_cL\frac{dV_d}{d\theta }
 \end{equation}
-From the Verdet equation, we were able to replace the unknown $\frac{d\theta }{dB}$ with the Verdet constant times the length of the glass rod. We can further reduce this equation if we carefully choose a single point at which to analyze this expression. Being a $cos^2(\theta)$ function, the derivative $\frac{\delta V_d}{\delta \theta}$ simplifies very nicely at $\frac{\pi}{4}$ as follows:
+From the Verdet equation, we were able to replace the unknown $\frac{d\theta }{dB}$ with the Verdet constant times the length of the glass rod. We can further reduce this equation if we carefully choose a single point at which to analyze this expression. Being a $\cos^2(\theta)$ function, the derivative $\frac{\delta V_d}{\delta \theta}$ simplifies very nicely at $\frac{\pi}{4}$ as follows:
 \begin{eqnarray}
 \label{derivative}
-\frac{dV}{d\theta }=-2v_0cos(\theta )sin(\theta )=-v_0sin(2\theta )\\
-\frac{dV}{d\theta } \mid_{\frac{\pi }{4}}=-v_0
+\frac{dV}{d\theta }=-2V_0\cos(\theta )\sin(\theta )=-V_0sin(2\theta )\\
+\frac{dV}{d\theta } \mid_{\frac{\pi }{4}}=-V_0
 \end{eqnarray}
 Plugging that into the previous equation, we get:
 \begin{eqnarray}
 \label{slope eqn}
-\frac{dV_d}{dB}\mid_\frac{\pi }{4}=v_cL\frac{dV_d}{d\theta }\mid_\frac{\pi }{4}=-v_0v_cL\\
-v_c=-\frac{\frac{dV_d}{dB}\mid_\frac{\pi }{4}}{v_0L}
+\frac{dV_d}{dB}\mid_\frac{\pi }{4}=v_cL\frac{dV_d}{d\theta }\mid_\frac{\pi }{4}=-V_0v_cL\\
+v_c=-\frac{\frac{dV_d}{dB}\mid_\frac{\pi }{4}}{V_0L}
 \end{eqnarray}
 All that is needed is $\frac{dV_d}{dB}\mid_\frac{\pi }{4}$, which can be found by plotting the photodiode voltage at a relative polarizer angle of 45 degrees against corresponding magnetic field strengths. The error in voltage was calculated by applying our error in angle to the best fit trend lines centered at a relative polarizer angle of 45 degrees. From this, we can find the maximum and minimum possible slopes that would fit the set of points for $\frac{dV_d}{dB}\mid_\frac{\pi }{4}$, and use the differences as error in our slope. Because the slope should be at a maximum value at 45 degrees, then at either point above or below that point, the slope will be lower that at 45 degrees. Since this means that any error will result in a lower than expected value, we will only consider the +error. The final result from this method was $v_c = 18.67 + 0.504$ $\frac{rad}{m*T}$.
 
@@ -165,7 +165,9 @@ All that is needed is $\frac{dV_d}{dB}\mid_\frac{\pi }{4}$, which can be found b
 \end{figure}
 
 \section{Conclusion}
-The errors in our final values were fairly good: about 2 percent on the direct method and about 3 percent for the slope method. Unfortunately, this means that the two results are inconsistant, as the minimum value for the direct method is 20.15 $\frac{rad}{m*T}$ whereas the maximum value of the slope method is 19.17 $\frac{rad}{m*T}$. While somewhat close, they still are distinctly different. These values are also different from the accepted 23 $\frac{rad}{m*T}$ - being within 10 and 20 percent respectively. When looking at this experiment again, it could be useful to see if there are any changes in Verdet constant for the specific glass used in the rod compared with the general literature for glass, perhaps improving our accuracy. For reducing error even further, a combination of taking more data points and using a device - such as a computer controlled rotater - to be more precise in locking in to the correct angle would help a lot. And while our numbers were lower than expected instead of higher - indicating that zeroing and using the lock-in amplifier were fairly successful in removing contributions from room light - having a way to box in the experiment set-up, thus blocking ambient light, would certainly be beneficial.
+The errors in our final values were fairly good: about 2 percent on the direct method and about 3 percent for the slope method. Unfortunately, this means that the two results are inconsistant, as the minimum value for the direct method is 20.15 $\frac{rad}{m*T}$ whereas the maximum value of the slope method is 19.17 $\frac{rad}{m*T}$. While not within 1 $\sigma$, they are consistant within 2 $\sigma$. These values are also different from the accepted 23 $\frac{rad}{m*T}$ reported by Teachspin - being within 10 and 20 percent respectively. This could be in part come from the fact that the Verdet Constant is wavelength dependant, and a 670nm laser was used to obtain 23 $\frac{rad}{m*T}$, while our laser was only 650nm.
+
+ When looking at this experiment again, it could be useful to see if there are any changes in Verdet constant for the specific glass used in the rod compared with the general literature for glass, perhaps improving our accuracy. For reducing error even further, a combination of taking more data points and using a device - such as a computer controlled rotater - to be more precise in locking in to the correct angle would help a lot. And while our numbers were lower than expected instead of higher - indicating that zeroing and using the lock-in amplifier were fairly successful in removing contributions from room light - having a way to box in the experiment set-up, thus blocking ambient light, would certainly be beneficial.
 
 
 \end{document}
