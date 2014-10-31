@@ -1,0 +1,185 @@
+\documentclass[prb,preprint]{revtex4-1} 
+\usepackage{tikz}
+\usepackage{amsmath} 
+\usepackage{amsfonts} 
+\usepackage{graphicx} 
+\usepackage{float}
+
+\begin{document}
+
+\title{Rotating Polarization of Laser Light Using a Medium in a Magnetic Field}
+
+\author{Ed Lipchus}
+\email{ejl13@hampshire.edu} 
+\affiliation{Department of Physics, Hampshire College, Amherst, MA, 01002}
+
+\author{Jiajun Shi}
+\email{jshi15@amhesrt.edu}
+\affiliation{Department of Physics, Amherst College, Amherst MA, 01002}
+
+\date{\today}
+
+\begin{abstract}
+
+Known as the Faraday Effect, when one passes light through certain materials, you can change its polarization by applying a magnetic field. Each material has a Verdet Constant, which characterizes the degree to which the applied magnetic field will alter the polarization angle. In our experiment, we passed a polarized red (650nm) laser beam through a glass rod centered within a solenoid (where the change in polarization of the light will occur) and then through a rotating polarizer (used to see the relative change in polarization angle) and finally into a photodiode, where the intensity of the light is measured as a voltage drop across a 1k $\Omega$ resistor; noise due to ambient light and laser fluctuation was reduced using a combination of square-wave modulation of the laser and a lock-in amplifier for the signal from the photodiode. To explore two different methods of finding the Verdet Constant, we first measured the sinusoidal variation in intensity caused by rotating the polarizer for fixed magnetic field strengths, and repeating the trials with different fields ranging from -3T to 3T. Next, we used a fixed relative polarizer angle of 45 degrees and measured the change in light intensity at the photodiode as a function of changing magnetic field strength, again from -3T to 3T. We then solved for the Verdet constant of the glass rod and compared the results to the accepted values for the glass. Our two methods yielded a $v_c$ of 20.53 $\pm$ 0.382 $\frac{rad}{m*T}$ and 18.67 + 0.504 $\frac{rad}{m*T}$, respectively, compared with the accepted value of 23 $\frac{rad}{m*T}$. Our two values are inconsistant within one $\sigma$, but are consistant within 2 $\sigma$, and are both similar to the accepted value, which was calculated using a 670nm laser and the Verdet Constant is wavelength dependant.
+
+\end{abstract}
+
+\maketitle 
+
+\section{Introduction} 
+
+In 1845, Michael Faraday discovered that light and magnetic field interact in medium, in which the latter rotates the light's plane of polarization by an angle linearly proportional to the field, provided that the magnetic field is parallel to the direction of propagation of light. This magneto-optical phenomenon, now called Faraday effect, provided the very first evidence that light and magnetism are connected. We can write down the Faraday equation mathematically:
+
+\begin{equation*}
+\label{faraday}
+\Delta\phi =v_cBL
+\end{equation*}
+
+where L is the length of the medium light goes through, B is the magnetic field, and $\Delta\phi$ is the change in polarization angle in radians. V here is a material-dependent number called $Verdet$ constant.
+To experimentally verify the Faraday equation in our lab, we need to measure the change in polarization of light within a birefringent material in a magnetic field, and calculate the Verdet constant from the equation, then compare it with the actual Verdet constant specified for our material. We proceed with a polarized 650nm laser beam going through a glass rod centered inside a solenoid, which creates a magnetic field inside, and passing through an adjustable polarizer. We call this adjustable polarizer the 2nd polarizer given that there is already a polarizer inside the laser module. This 2nd polarizer is used to observe the change in polarization angle after the laser beam passes through the glass rod. The output laser beam is finally collected by a photodiode in series with a 1K$\Omega$ resistor. By measuring the voltage drop across the resistor using a Keithley 2100 multimeter linked with a computer, we know the current output from the photodiode, and, since it is experimentally verified that the photodiode outputs a current proportional to the intensity of the light it receives, we can find the intensity of the laser beam. We do five sets of measurements, each with a different magnetic field strength. This is achieved by changing the current through the solenoid, thus changing the magnetic field inside it. With each magnetic field strength, we rotate the 2nd polarizer and record voltage reading across the 1K$\Omega$ resistor, given that Faraday's finding suggests that the intensity of the laser beam is dependent on the polarizer angle. We expect to see phase shifts in the light intensity across different field settings as the magnetically induced rotation of the polarization angle is also dependent on the strength of the field. It is worth noting that Faraday effect is a relatively small effect with our lab-strength magnetic field.
+
+We use two approaches to model the Faraday effect and find the Verdet constant for the glass rod we use. One approach is the direct method, in which we plot the voltage readings versus polarizer angle and measure the the sinusoidal variation of polarized light intensity and its dependence on the 2nd polarizer angle for different magnetic field settings mentioned above, so that we can find the magnetic-field dependent change in polarization angle after the beam passes through the glass. This method gives us the Verdet constant directly from the Faraday equation. In another method, called slope method, we measure the variation in light intensity as a function of magnetic field strength while holding the 2nd polarizer at a fixed angle, then further find the change in polarization induced by the magnetic field. The fixed relative angle is chosen to be 45 degrees to maximize the sensitivity of our photodiode since at around this angle, changes in magnetic field strength will cause the largest variations in voltage reading. The first method includes the process of sinusoidal fitting of the data using computer software, while the latter requires mathematical manipulation of the Faraday equation. We expect the results from the two methods to be the same given that in both methods we are measuring the Verdet consent for the same material, but one should note that the two methods are not experimentally equivalent and have different sources of error. For instance, if there is systematic error in the setting of the 2nd polarizer angle,  we expect the two methods to yield different results since the the direct method seeks the light intensity's dependence on the 2nd polarizer angle while the slope method does not require rotation of the 2nd polarizer. The detailed descriptions of these two methods can be found in the analysis section.
+
+\section{Experiment}
+
+Before we proceed with the Faraday rotation, we first have to determine the magnetic field used for rotation induction. The lab power supply, Keithley 2230-30-1, generates the currents to create magnetic field within the coil, in our case -3A, -2A, 2A, and 3A for a variety of fields to induce different polarization rotations. We also conduct the experiment with no current inside the coil to better observe the change in polarization with respect to the original polarization of the laser light.
+
+Determining the magnetic field within the coil requires a Gauss meter and some reference, a ruler in our case, to find the distance between the tip of the Gauss meter and the center of the solenoid. We measure the length of the solenoid and make sure the meter tip is centered inside, then pull it out to determine the magnetic field at each point inside the solenoid. In this step, we only supply 1A to the solenoid, as we know from Ampere's law,
+
+\begin{equation}
+\label{Ampere}
+B=\mu nI
+\end{equation}
+
+where $n$ stands for turns per unit length, that magnetic field inside the solenoid is linearly proportional to the current, so if we find the magnetic field at a point to be $B_1$ with 1A current supply, we can say the field would be $2B_1$ for 2A, $3B_1$ for 3A, and so on. The measured magnetic field is
+
+\begin{table}[H]
+\centering
+\caption{Measuring the Magnetic Field Inside the Solenoid}
+\begin{ruledtabular}
+\begin{tabular}{c c c c c c}
+Distance from Center & Magnetic Field\\
+\hline
+0                    & 106.5 $\pm$ 0.1G \\ 
+5.5cm                & 100 $\pm$ 0.1G   \\ 
+6.4cm                & 94.9 $\pm$ 0.1G  \\ 
+6.7cm                & 90.0 $\pm$ 0.1G  \\ 
+7.1cm                & 80.0 $\pm$ 0.1G  \\ 
+7.2cm                & 70.0 $\pm$ 0.5G  \\ 
+7.8cm                & 50.0 $\pm$ 0.5G  \\ 
+8.1cm                & 40.5 $\pm$ 0.5G  \\ 
+8.4cm                & 30.0 $\pm$ 0.5G  \\ 
+
+\end{tabular}
+\end{ruledtabular}
+\label{AnglevsB}
+\end{table}
+
+The next step is to insert the glass rod, which serves as the rotation medium in this experiment, into the solenoid. The length reference is again used to make sure the rod is centered inside the solenoid. The length of the glass rod is $10 \rm{\ cm}$=$0.1 \rm{\ m}$, so each end of the glass rod is $0.05 \rm{\ m}$ away from the center. According to the above magnetic field table, the field undergoes a minor change from the center to $0.05 \rm{\ m}$ away, namely from 106.5$\pm$0.1G to 100$\pm$0.1G, suggesting that we can safely take the average value of the fields at these two points, 103G, as the approximation of the magnetic field within the glass rod. The magnetic fields under 2A and 3A shall be 206G and 309G, respectively. Reversing the sign of the current also reverses the sign of the magnetic field.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=180mm]{ExperimentSetup.pdf}
+    \caption{Experiment setup. Not drawn to scale. }
+    \end{figure}
+    
+The initial angle of the 2nd polarizer is the angle that allows maximum light intensity. Calling this zero angle, we rotate the 2nd polarizer 5 degrees at a time. To filter out any background noise including multimeter noise, background light, and thermal fluctuations within the photodiode, we use several noise reduction devices:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=180mm]{Filter.pdf}
+    \caption{Noise reduction procedures. The output voltage goes through a pre-amplifier with gain=1, then a band-pass filter with Q=10, and finally a lock-in amplifier with gain=2 to eliminate any thermal fluctuations. Multimeter is zeroed with room light on to eliminate this offset.}
+    \end{figure}
+    
+Due to changes in room lighting, we may have fluctuations in the measured light intensity since the photodiode collects room light as well. We apply some noise reduction methods here. First, we square-wave modulated the laser output at 200Hz. This helps eliminate undesired voltage offsets and fluctuations in the measured light intensity. This square-wave modulation signal is also used as the frequency and phase reference for a lock-in amplifier so that it can be used for phase-sensitive detection of the transmitted light, or equivalently a phase-sensitive AC voltmeter. Since the lock-in amplifier picks exactly the signal with the the same phase as our modulation signal or laser, it further eliminates the offsets due to room-light fluctuations and thus improves the signal to noise ratio.  The band pass filter as shown in the diagram transforms our square wave at 200Hz into a sine wave at 200Hz (1st harmonic), and blocks noise signals from undesired source from getting through.
+
+\section{Analysis and Discussion}
+After collecting data for all five different currents, those points were plotted and fit using the plot.ly interface (see Fig.\ref{wave_plot}). Given the positive, periodic nature of the photodiode intensity, we used the following as the fit parameter:
+\begin{equation}
+\label{volt eqn}
+V_d = V_0 \cos^2(\theta -\theta _0)
+\end{equation}
+In this manner, by comparing the phase shift $\theta_0$ for each trial, we can find the relative change in polarization resulting from each magnetic field. For error in relative polarizer angle, we considered $\pm$ 1 degree, however when fitting across all 72 points, their combinations constrained the error by a factor of $\frac{1}{\sqrt{72}}$ for an effective error of $\pm$ 0.118 degrees. Error in voltage, and thus in magnetic field, is considered negligible based on the precision and stability of our power supply and volt meter. Since the above equations, and those that follow, use $\Theta$ in radians, all measurements in degrees were converted during calculation.
+
+With the photodiode voltage, relative polarizer angle, and magnetic field strength data, there are two possible methods for calculating the Verdet constant:
+\begin{equation}
+\label{verdet eqn}
+v_c=\frac{1}{L}\frac{d\theta }{dB}=\frac{1}{L}\frac{\Delta \theta }{\Delta B}
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{Relative Angle vs Magnetic Field}
+
+
+\renewcommand{\arraystretch}{1.8}
+\begin{ruledtabular}
+\begin{tabular}{c c c c c c}
+Phase Shift (deg) & Fit Error & $\Delta$ Phase Shift (deg) & Current (A) & Magnetic Field (T) & $V_d$ at 45 deg (V)\\
+\hline
+-1.690 & 0.1267 & -3.692 & -3.000 & -0.0309 & 0.6739 \\
+-0.047 & 0.0950 & -2.475 & -2.000 & -0.0206 & 0.7067 \\
+2.002  & 0.1219 & 0.000  & 0.000 & 0.000   & 0.7551 \\
+4.534  & 0.1657 & 2.532  & 2.000 & 0.0206  & 0.8283 \\
+5.471  & 0.1744 & 3.469  & 3.000 & 0.0309  & 0.8550 \\
+\end{tabular}
+\end{ruledtabular}
+\label{AnglevsB}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=180mm]{FaradaySineWave.pdf}
+\caption{Voltage read at the photodiode as a function of relative angle between the polarizer and the laser beam, with best fit lines added. Shown above are the values with no magnetic field applied and with those created by running a current of 3Amps and -3Amps through our solenoid, demonstrating an obvious phase shift between them. Photodiode voltage and phase shifts were also measured under the fields created by running a current of 2Amps and of -2Amps through the solenoid.}
+\label{wave_plot}
+\end{figure}
+
+The first method attempts to solve for the Verdet constant directly by graphing $\delta \theta$ versus $\delta B$ (see Fig.\ref{V_B Slope}). The slope of the linear fit of this line provides $\frac{\delta \theta}{\delta B}$, solving for $v_c = 20.53$ $\frac{rad}{m*T}$. Error in $\theta$ was calculated as the sum in quadrature of our error in measurement - 0.118 degress - and the error in the linear fit - 2.19 degrees. Neglecting error in B, then $\frac{\delta v_c}{v_c} = \frac{\delta \Delta \theta}{\Delta \theta}$, giving an error of $\pm 0.382$ $\frac{rad}{m*T}$. Thus the direct method yielded a Verdet constant of 20.53 $\pm$ 0.382 $\frac{rad}{m*T}$.
+
+\begin{figure}[h]
+
+\includegraphics[width=180mm]{V_B_Slope.pdf}
+\caption{\label{V_B Slope}Photodiode voltage as a function of magnetic field at a relative polarizer angle of 45 degrees. As an error in either direction of angle would reduce voltage, only down error bars are considered. To get the error in $\Delta$ V/$\Delta$ B, the difference between the best fit slope and the largest and smallest possible fit slopes are calculated.}
+\end{figure}
+
+The second method, referred to as the slope method, compares the photodiode voltage to the magnetic field strength instead with the following relation:
+\begin{equation}
+\frac{dV_d}{dB}= \frac{dV_d}{d\theta }\frac{d\theta }{dB}=v_cL\frac{dV_d}{d\theta }
+\end{equation}
+From the Verdet equation, we were able to replace the unknown $\frac{d\theta }{dB}$ with the Verdet constant times the length of the glass rod. We can further reduce this equation if we carefully choose a single point at which to analyze this expression. Being a $\cos^2(\theta)$ function, the derivative $\frac{\delta V_d}{\delta \theta}$ simplifies very nicely at $\frac{\pi}{4}$ as follows:
+\begin{eqnarray}
+\label{derivative}
+\frac{dV}{d\theta }=-2V_0\cos(\theta )\sin(\theta )=-V_0sin(2\theta )\\
+\frac{dV}{d\theta } \mid_{\frac{\pi }{4}}=-V_0
+\end{eqnarray}
+Plugging that into the previous equation, we get:
+\begin{eqnarray}
+\label{slope eqn}
+\frac{dV_d}{dB}\mid_\frac{\pi }{4}=v_cL\frac{dV_d}{d\theta }\mid_\frac{\pi }{4}=-V_0v_cL\\
+v_c=-\frac{\frac{dV_d}{dB}\mid_\frac{\pi }{4}}{V_0L}
+\end{eqnarray}
+All that is needed is $\frac{dV_d}{dB}\mid_\frac{\pi }{4}$, which can be found by plotting the photodiode voltage at a relative polarizer angle of 45 degrees against corresponding magnetic field strengths. The error in voltage was calculated by applying our error in angle to the best fit trend lines centered at a relative polarizer angle of 45 degrees. From this, we can find the maximum and minimum possible slopes that would fit the set of points for $\frac{dV_d}{dB}\mid_\frac{\pi }{4}$, and use the differences as error in our slope. Because the slope should be at a maximum value at 45 degrees, then at either point above or below that point, the slope will be lower that at 45 degrees. Since this means that any error will result in a lower than expected value, we will only consider the +error. The final result from this method was $v_c = 18.67 + 0.504$ $\frac{rad}{m*T}$.
+
+
+\begin{figure}[h]
+\includegraphics[width=180mm]{dTheta_dT.pdf}
+\caption{\label{dTheta_dT}Change in the measured phase shift angle with the application of a magnetic field. The slope of the best fit is used in the direct measurement method of finding the Verdet constant.}
+
+\end{figure}
+
+\section{Conclusion}
+The errors in our final values were fairly good: about 2 percent on the direct method and about 3 percent for the slope method. Unfortunately, this means that the two results are inconsistant, as the minimum value for the direct method is 20.15 $\frac{rad}{m*T}$ whereas the maximum value of the slope method is 19.17 $\frac{rad}{m*T}$. While not within 1 $\sigma$, they are consistant within 2 $\sigma$. These values are also different from the accepted 23 $\frac{rad}{m*T}$ reported by Teachspin - being within 10 and 20 percent respectively. This could be in part come from the fact that the Verdet Constant is wavelength dependant, and a 670nm laser was used to obtain 23 $\frac{rad}{m*T}$, while our laser was only 650nm.
+
+When looking at this experiment again, it could be useful to see if there are any changes in Verdet constant for the specific glass used in the rod compared with the general literature for glass, perhaps improving our accuracy. For reducing error even further, a combination of taking more data points and using a device - such as a computer controlled rotater - to be more precise in locking in to the correct angle would help a lot. And while our numbers were lower than expected instead of higher - indicating that zeroing and using the lock-in amplifier were fairly successful in removing contributions from room light - having a way to box in the experiment set-up, thus blocking ambient light, would certainly be beneficial.
+
+Additionally for future experiments, it is worth noting strengths and limitations of the two methods employed. As long as the magnetic field is reasonably strong, and one collects enough data points, the direct method offers a very accurate answer because when fitting the $\cos^2$ function, the errors in each data point constrain each point, improving the overall error by $\frac{1}{sqrt{N}}. However, since there is a clear limit on how precisely one can change the angle on the polarizer - in our case we were accurate to within a degree, but only in 5 degree increments - dealing with very small magnetic fields or much smaller Verdet Constants would prove problematic. In that case, it is worth locking the rotating polarizer at a relative angle of 45 degrees and varing the current supplying the magnetic field, since the equipment used in this experiment can produce a current of as small as 0.001A and can measure photodiode voltages down to 0.001mV, and such precision allows for the acquisition of very small changes. In fact, if one were to modulate the magnetic field as $B = B_0+B_1\sin{\omega t}$ for $B_1 \ll B_0$, then the change in photodiode voltage will directly be the slope $\frac{dV}{dB}$.
+
+Speaking of variations in the magnetic field, it is worth noting that we only took a simple average over the range of the glass rod to acquire an approximate value of field strength. This may have sufficed for our purposs, since it is observed that field strength does not vary much within the glass. However, if we aim to measure the Verdet constant for a liquid sample that extends outside the solenoid, the simple average would not give us a reliable estimate on field strength. In that case, we need to use the weighted average $\frac{1}{N} \sum_{x_1=-L/2}^{x_N = L/2}B(x_i)$ instead. Even better, we can fit data to a smooth function for B(x) (not feasible in our case given the insufficient number of data points), and use the formula $\frac{1}{L} \int_{-L/2}^{L/2}B(x)dx$ for a better estimate of field strength.
+
+Given that we are also unsure of the exact wavelengeth dependence, the experiment could be done with the above constant relative angle of 45 degrees and a fixed magnetic field, but to oscillate the frequency of the laser instead and measure the effect it has on $\frac{dV}{dB}$.
+
+In the end, the Faraday Effect is worth studying and understanding well, as it has numerous applications. One example of such is the optical isolator, or optical diode. It works much like our experiment - light light passes through a polarizer, has its polarization angle changed passing through a material under a magnetic field to align with a second polarizer (at a 45 degree angle relative to the first polarizer) at the other end so that the light can pass through. The effect is that any reflected light will now be at 90 degrees relative to the first polarizer and thus will be unable to pass through. This is extremely useful in laser cavities. Alternatively, on can use this to change the polarization of light coming from different directions without interfering with eachother, as in fiber optic cables.
+
+
+\end{document}
